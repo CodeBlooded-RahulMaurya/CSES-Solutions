@@ -4,7 +4,7 @@
 | | | | \ \ / / | '_ \ / _ \___ \ / _ \| | | | |
 | |_| | |\ V /| | | | |  __/___) | (_) | |_| | |
 |____/|_| \_/ |_|_| |_|\___|____/ \___/ \__,_|_|                                      
-
+                                                  
 */
 #include <bits/stdc++.h>
 #define ll long long
@@ -32,21 +32,37 @@ int main()
 {
     //readFile();
     ios();
-    string st;
-    cin >> st;
-    ll len = 1, mx = 1;
-    for (size_t i = 1; i < st.length(); i++)
+    int n;
+    cin >> n;
+    if (n == 1)
     {
-        if (st[i - 1] == st[i])
-        {
-            len += 1;
-        }
-        else
-        {
-            len = 1;
-        }
-        mx = max(mx, len);
+        cout << "1";
     }
-    cout << mx;
+    else if (n < 4)
+        cout << "NO SOLUTION";
+    else if (n == 4)
+    {
+        cout << "3 1 4 2";
+    }
+    else
+    {
+        int mid = (n + 1) / 2;
+        int a[n];
+        for (size_t i = 1, j = 0; i <= mid; i++)
+        {
+            // deb2(i,j);
+            a[j] = i;
+            j += 2;
+        }
+        for (size_t i = mid + 1, j = 1; i <= n && j <= n; i++)
+        {
+            a[j] = i;
+            j += 2;
+        }
+        for (size_t i = 0; i < n; i++)
+        {
+            cout << a[i] << " ";
+        }
+    }
     return 0;
 }

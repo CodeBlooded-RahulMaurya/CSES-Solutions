@@ -9,33 +9,40 @@
 #include <bits/stdc++.h>
 #define ll long long
 #define deb1(x) cout << #x << " " << x << "\n";
-#define deb2(x,y) cout << #x<<" "<<x<<" "<<#y<<" "<<y<<"\n";
-#define deb3(x,y,z) cout << #x<<" "<<x<<" "<<#y<<" "<<y<<" "<<#z<<" "<<z<<"\n";
-#define ios()  ios::sync_with_stdio(0);cin.tie(0)
-#define tc     int t;cin>>t;while(t--)
+#define deb2(x, y) cout << #x << " " << x << " " << #y << " " << y << "\n";
+#define deb3(x, y, z) cout << #x << " " << x << " " << #y << " " << y << " " << #z << " " << z << "\n";
+#define ios()                \
+    ios::sync_with_stdio(0); \
+    cin.tie(0)
+#define tc    \
+    int t;    \
+    cin >> t; \
+    while (t--)
 using namespace std;
 
-void readFile() {
-    #ifndef ONLINE_JUDGE
+void readFile()
+{
+#ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
-    #endif
+#endif
 }
 //----------------------------------------------------------------------------------
-int main() {
+int main()
+{
     //readFile();
-     ios();
+    ios();
     int n;
-    cin>>n;
-    long int lmax,next;
+    cin >> n;
+    long int lmax, next;
     ll ans = 0;
-    cin>>lmax;
-    for (size_t i = 1; i < n && n>1; i++)
+    cin >> lmax;
+    for (size_t i = 1; i < n && n > 1; i++)
     {
-        cin>>next;
-        lmax = max(lmax,next);  
-        ans +=  (lmax-next)>0?(lmax-next):0;
+        cin >> next;
+        lmax = max(lmax, next);
+        ans += (lmax - next) > 0 ? (lmax - next) : 0;
     }
-    cout<<ans<<endl;
+    cout << ans << endl;
     return 0;
 }

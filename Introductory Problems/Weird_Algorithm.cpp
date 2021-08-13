@@ -9,35 +9,45 @@
 #include <bits/stdc++.h>
 #define ll long long
 #define deb1(x) cout << #x << " " << x << "\n";
-#define deb2(x,y) cout << #x<<" "<<x<<" "<<#y<<" "<<y<<"\n";
-#define deb3(x,y,z) cout << #x<<" "<<x<<" "<<#y<<" "<<y<<" "<<#z<<" "<<z<<"\n";
-#define ios()  ios::sync_with_stdio(0);cin.tie(0)
-#define tc     int t;cin>>t;while(t--)
+#define deb2(x, y) cout << #x << " " << x << " " << #y << " " << y << "\n";
+#define deb3(x, y, z) cout << #x << " " << x << " " << #y << " " << y << " " << #z << " " << z << "\n";
+#define ios()                \
+    ios::sync_with_stdio(0); \
+    cin.tie(0)
+#define tc    \
+    int t;    \
+    cin >> t; \
+    while (t--)
 using namespace std;
 
-void readFile() {
-    #ifndef ONLINE_JUDGE
+void readFile()
+{
+#ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
-    #endif
+#endif
 }
 //----------------------------------------------------------------------------------
-int main() {
+int main()
+{
     //readFile();
-     ios();
-    
-        ll n=0;
-        cin>>n;
-        cout<<n<<" ";
-        while(n!=1){
-            if (n%2==0){
-                n = n/2;
-            }
-            else {
-                n = n * 3 + 1;
-            }
-            cout<<n<<" ";
-        }  
-    
+    ios();
+
+    ll n = 0;
+    cin >> n;
+    cout << n << " ";
+    while (n != 1)
+    {
+        if (n % 2 == 0)
+        {
+            n = n / 2;
+        }
+        else
+        {
+            n = n * 3 + 1;
+        }
+        cout << n << " ";
+    }
+
     return 0;
 }

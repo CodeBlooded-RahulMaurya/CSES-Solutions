@@ -4,7 +4,7 @@
 | | | | \ \ / / | '_ \ / _ \___ \ / _ \| | | | |
 | |_| | |\ V /| | | | |  __/___) | (_) | |_| | |
 |____/|_| \_/ |_|_| |_|\___|____/ \___/ \__,_|_|                                      
-
+                                                  
 */
 #include <bits/stdc++.h>
 #define ll long long
@@ -32,21 +32,22 @@ int main()
 {
     //readFile();
     ios();
-    string st;
-    cin >> st;
-    ll len = 1, mx = 1;
-    for (size_t i = 1; i < st.length(); i++)
+    int n;
+    cin >> n;
+    if (n == 2 || n == 3)
     {
-        if (st[i - 1] == st[i])
-        {
-            len += 1;
-        }
-        else
-        {
-            len = 1;
-        }
-        mx = max(mx, len);
+        cout << "NO SOLUTION";
     }
-    cout << mx;
+    else
+    {
+        for (int i = 1; i < n; i = i + 2)
+        {
+            cout << i +1 << " ";
+        }
+        for (int i = 0; i < n; i = i + 2)
+        {
+            cout << i +1<< " ";
+        }
+    }
     return 0;
 }
