@@ -117,6 +117,6 @@ int main()
             }
         }
     }
-    generateNumberSpiral(10);
+    // generateNumberSpiral(10);
     return 0;
 }
