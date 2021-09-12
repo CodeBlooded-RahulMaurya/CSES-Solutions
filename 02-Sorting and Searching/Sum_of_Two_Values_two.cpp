@@ -34,31 +34,54 @@ int main()
     ios();
     int n, tsum;
     cin >> n >> tsum;
-    ll t;
-    vector<pair<ll, ll>> a;
+    multimap<int, int> m;
+    int t;
+    vector<int> a;
     for (int i = 0; i < n; i++)
     {
         cin >> t;
-        a.push_back(pair<int, int>(t, i + 1));
+        a.push_back(t);
+        m.insert(pair<int, int>(t, i + 1));
     }
-    sort(a.begin(), a.end());
-    ll l = 0, r = n - 1;
-    while (l < r)
+    if (n <= 3)
     {
-        if (a[l].first + a[r].first == tsum)
+        for (int i = 0; i < n - 1; i++)
         {
-            cout << a[l].second << " " << a[r].second << "\n";
-            return 0;
+            for (int j = i + 1; j < n; j++)
+            {
+                if (a[i] + a[j] == tsum)
+                {
+                    cout << i + 1 << " " << j + 1 << "\n";
+                    return 0;
+                }
+            }
         }
-        else if (a[l].first + a[r].first < tsum)
+        cout << "IMPOSSIBLE\n";
+        return 0;
+    }
+    // sort(m.begin(),m.end());
+    auto left = m.begin();
+    auto right = m.crbegin();
+    while (left != (right).base())
+    {
+        if (left->first + right->first == tsum)
         {
-            l += 1;
+            break;
+        }
+        else if (left->first + right->first < tsum)
+        {
+            ++left;
         }
         else
         {
-            r -= 1;
+            ++right;
         }
     }
-    cout << "IMPOSSIBLE\n";
+    if (left == (right).base())
+        cout << "IMPOSSIBLE";
+    else
+    {
+        cout << left->second << " " << right->second << "\n";
+    }
     return 0;
 }
