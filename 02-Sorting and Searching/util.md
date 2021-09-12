@@ -7,3 +7,10 @@ bool sortbysec(const pair<int, int> &a, const pair<int, int> &b)
  sort(v.begin(), v.end(), sortbysec);
 ```
 ------
+compare forward and backward iterators
+```cpp
+   auto left = m.begin();
+    auto right = m.crbegin();
+    while (left != (right).base())
+```
+---------------------
